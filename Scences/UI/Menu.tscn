@@ -1,0 +1,169 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scences/UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Atarian/SF Atarian System Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/Atarian/SF Atarian System Extended Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/GUI/Background/Cartoon_Forest_BG_01.png" type="Texture" id=4]
+[ext_resource path="res://addons/kenney_interface_sounds/click_004.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.231373, 0.917647, 0.0901961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.219608, 0.345098, 0.192157, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color( 0.403922, 0.568627, 0.411765, 0.6 )
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.203922, 0.988235, 0.0431373, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.219608, 0.345098, 0.192157, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color( 0.403922, 0.568627, 0.411765, 0.6 )
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.847059, 0.133333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.219608, 0.345098, 0.192157, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color( 0.403922, 0.568627, 0.411765, 0.6 )
+shadow_size = 2
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Khung" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PhanDau" type="VBoxContainer" parent="Khung"]
+margin_right = 1024.0
+margin_bottom = 84.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Khung/PhanDau"]
+margin_right = 1024.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="TieuDe" type="HBoxContainer" parent="Khung/PhanDau"]
+margin_top = 54.0
+margin_right = 1024.0
+margin_bottom = 84.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Khung/PhanDau/TieuDe"]
+margin_left = 289.0
+margin_right = 734.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 5 )
+text = "DAY LA GAME CUA ANONYVIET"
+
+[node name="PhanCuoi" type="VBoxContainer" parent="Khung"]
+margin_top = 88.0
+margin_right = 1024.0
+margin_bottom = 280.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Khung/PhanCuoi"]
+margin_right = 1024.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="BatDau" type="HBoxContainer" parent="Khung/PhanCuoi"]
+margin_top = 54.0
+margin_right = 1024.0
+margin_bottom = 94.0
+alignment = 1
+
+[node name="NutBatDau" type="Button" parent="Khung/PhanCuoi/BatDau"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "BAT DAU"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Khung/PhanCuoi"]
+margin_top = 98.0
+margin_right = 1024.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 0, 50 )
+region_rect = Rect2( 304, 63, 58, 102 )
+
+[node name="ThoatGame" type="HBoxContainer" parent="Khung/PhanCuoi"]
+margin_top = 152.0
+margin_right = 1024.0
+margin_bottom = 192.0
+alignment = 1
+
+[node name="NutThoatGame" type="Button" parent="Khung/PhanCuoi/ThoatGame"]
+margin_left = 437.0
+margin_right = 587.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "THOAT GAME"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="pressed" from="Khung/PhanCuoi/BatDau/NutBatDau" to="." method="_on_NutBatDau_pressed"]
+[connection signal="pressed" from="Khung/PhanCuoi/ThoatGame/NutThoatGame" to="." method="_on_NutThoatGame_pressed"]
